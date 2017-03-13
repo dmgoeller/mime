@@ -1,0 +1,8 @@
+# Generated gem files
+mime-*.gem
+
+# Generated RDoc
+/doc/rdoc/
+
+# Temporary files
+/tmp/
