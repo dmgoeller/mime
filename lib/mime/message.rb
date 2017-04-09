@@ -68,7 +68,7 @@ module Mime
         @content = content
       else
         unless @content.is_a?(CompositeContent)
-          @content = CompositeContent.new("mixed", @content)
+          @content = CompositeContent.new("mixed", nil, @content)
         end
         @content << content
       end
