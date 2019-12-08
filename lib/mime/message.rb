@@ -66,11 +66,10 @@ module Mime
     def <<(content)
       if @content.nil?
         @content = content
-      else
-        unless @content.is_a?(CompositeContent)
-          @content = CompositeContent.new("mixed", nil, @content)
-        end
+      elsif @content.is_a?(CompositeContent)
         @content << content
+      else
+        @content = CompositeContent.new("mixed", nil, @content)
       end
     end
 

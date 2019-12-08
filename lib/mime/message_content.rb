@@ -85,6 +85,7 @@ module Mime
           # quote parameter value if necessary
           if param_value.start_with?("\"")
             param_value.slice!(0)
+            param_value.slice!(-1) if param_value.end_with?("\"")
             quote = true
           else
             quote = param_value.include?(" ") || param_value.include?(";")
